@@ -23,11 +23,11 @@
     <meta name="keywords" content="psicoterapia digital, saúde mental, neuroplasticidade, microdosagem terapêutica, protocolos terapêuticos, terapia integrativa, psicodelix, protocolo MED, protocolo NEXUS, imersão terapêutica Brumadinho, terapia por IA, ansiedade tratamento, depressão alternativa, neurociência aplicada, psicoterapia assistida, bem-estar mental, autoconhecimento, terapia psicodélica, saúde mental digital" />
     <meta name="author" content="PSICODELIX" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://psicodelix.com.br" />
+    <link rel="canonical" href="https://psicodelix.com" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:url" content="https://psicodelix.com.br" />
+    <meta property="og:url" content="https://psicodelix.com" />
     <meta property="og:site_name" content="PSICODELIX" />
     <meta property="og:title" content="PSICODELIX — Protocolos Terapêuticos Baseados em Neurociência" />
     <meta property="og:description" content="Protocolos terapêuticos personalizados: Psicoterapia digital por IA e imersões presenciais em Brumadinho. Validados por Harvard, Johns Hopkins e NYU." />
@@ -103,18 +103,18 @@
 
         const BLOG_POSTS = [
           {
-            title: 'Ritual do Cacau Sagrado: A Neurociência por trás da Medicina Ancestral',
-            excerpt: 'Descubra como o cacau sagrado atua no cérebro, liberando anandamida e teobromina para promover remissão da ansiedade.',
-            image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1000',
-            date: '30 de Maio de 2026',
-            slug: 'ritual-do-cacau-sagrado-neurociencia'
+            title: 'Microdosagem de Psilocibina: Ciência, Segurança e o Caminho para a Remissão',
+            excerpt: 'Explorando as evidências científicas de 2025/2026 sobre a microdosagem de psilocibina para saúde mental e neuroplasticidade.',
+            image: '/assets-media/blog_microdosagem_2026.png',
+            date: '02 de Junho de 2026',
+            slug: 'microdosagem-psilocibina-ciencia-seguranca-remissao'
           },
           {
-            title: 'Ansiedade e Burnout: O Framework de Remissão da Johns Hopkins',
-            excerpt: 'Como novos protocolos de psicoterapia assistida estão alcançando 96% de eficácia na remissão de sintomas de burnout.',
-            image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1000',
-            date: '29 de Maio de 2026',
-            slug: 'ansiedade-burnout-remissao-psicodelica'
+            title: 'Psilocibina e Neuroplasticidade: A Ciência da Remissão Duradoura',
+            excerpt: 'Estudos de Johns Hopkins revelam que 67% dos pacientes com depressão maior permanecem em remissão 5 anos após terapia assistida.',
+            image: '/assets-media/blog_psilocibina_neuroplasticidade_2026.png',
+            date: '31 de Maio de 2026',
+            slug: 'psilocibina-neuroplasticidade-remissao-depressao-dor-cronica'
           }
         ];
 
@@ -139,11 +139,11 @@
               <div class="container mx-auto px-4" style="max-width: 1200px;">
                 <div class="text-center mb-12">
                   <h2 class="text-4xl font-bold text-white mb-4 font-serif">CONHECIMENTO</h2>
-                  <p class="text-gray-400 max-w-2xl mx-auto">Explore as últimas descobertas em neurociência, saúde mental e protocolos terapêuticos.</p>
+                  <p class="text-gray-400 max-w-2xl mx-auto">Explore as últimas descobertas em neurociência e protocolos validados em nosso Hub de Ciência.</p>
                 </div>
                 <div class="blog-grid-custom">
                   ${BLOG_POSTS.map(post => `
-                    <a href="/blog/${post.slug}" class="blog-card-custom">
+                    <a href="https://psicodelix.com.br/#/blog/${post.slug}" target="_blank" class="blog-card-custom">
                       <img src="${post.image}" alt="${post.title}">
                       <div class="blog-content">
                         <div class="blog-date">${post.date}</div>
@@ -152,6 +152,9 @@
                       </div>
                     </a>
                   `).join('')}
+                </div>
+                <div class="text-center mt-12">
+                  <a href="https://psicodelix.com.br" target="_blank" class="inline-block border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-xl font-bold transition-all">Ver Hub de Ciência Completo</a>
                 </div>
               </div>
             `;
@@ -211,6 +214,27 @@
           injectBlog();
           injectProtocols();
         }, 1000);
+
+        // Ajuste de Links de Navegação (Cabeçalho)
+        function adjustNavLinks() {
+          const navLinks = Array.from(document.querySelectorAll('button, a'));
+          navLinks.forEach(link => {
+            const text = link.innerText.trim().toUpperCase();
+            if (text === 'BLOG') {
+              link.onclick = (e) => {
+                e.preventDefault();
+                window.open('https://psicodelix.com.br', '_blank');
+              };
+            }
+            if (text === 'LOJA') {
+              link.onclick = (e) => {
+                e.preventDefault();
+                window.location.href = 'https://loja.psicodelix.com';
+              };
+            }
+          });
+        }
+        setInterval(adjustNavLinks, 1000);
       })();
     </script>
   </body>
